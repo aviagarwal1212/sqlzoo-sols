@@ -44,11 +44,11 @@ JOIN stops stopb ON (y.stop=stopb.id)
 WHERE stopa.name = 'Craiglockhart' AND stopb.name = 'Tollcross'
 
 /* Q9 */
-SELECT stopa.name, a.company, a.num
-FROM route a
-  JOIN route b ON (a.num=b.num AND a.company=b.company)
-  JOIN stops stopa ON (a.stop=stopa.id)
-  JOIN stops stopb ON (b.stop=stopb.id)
+SELECT stopa.name, routea.company, routea.num
+FROM route routea
+  JOIN route routeb ON (routea.num=routeb.num AND routea.company=routeb.company)
+  JOIN stops stopa ON (routea.stop=stopa.id)
+  JOIN stops stopb ON (routeb.stop=stopb.id)
 WHERE stopb.name = 'Craiglockhart'
 
 
