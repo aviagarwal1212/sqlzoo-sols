@@ -49,7 +49,7 @@ FROM route x
 JOIN route y ON (x.num = y.num AND x.company= y.company)
 JOIN stops stopa ON (x.stop=stopa.id)
 JOIN stops stopb ON (y.stop=stopb.id)
-WHERE stopb.name = 'Craiglockhart'
+WHERE stopb.name = 'Craiglockhart' AND x.company = 'LRT'
 
 /* Q10 */
 SELECT DISTINCT a.num, a.company, stopb.name ,  c.num,  c.company
